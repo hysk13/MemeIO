@@ -23,4 +23,5 @@ Well I don't think I'll care. You can do whatever you want.
 hysk13 - @hysk13 (I recommend not contacting trust)
 Project Link: https://github.com/hysk13/MemeIO
 
-Aaaaand that's it! I'll see y'all on my next project's README :D
+Aaaaand that's it! I'll see y'all on my next project's README :D\
+P.S. the "uploads/" folder is where Django will store the uploaded image files. Nothing's in it because I flushed the database at the end.
