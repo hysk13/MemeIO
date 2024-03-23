@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme.io - Post Your Memes Here</title>
+
+    <link rel="stylesheet" href="../static/base.css">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="../static/topics.css">
+    <link rel="stylesheet" href="../static/topic.css">
+    <link rel="stylesheet" href="../static/new_topic.css">
+    <link rel="stylesheet" href="../static/new_entry.css">
+    <!-- <link rel="stylesheet" href="../../MemeIOXUsers/static/login.css">
+    <link rel="stylesheet" href="../../MemeIOXUsers/static/register.css"> -->
+
+</head>
+<body>
+    
+    <div class="view-wrapper">
+
+        <div class="view-wrapper-sidebar">
+            <a href="{% url 'MemeIOX:index' %}">Home</a>
+            <a href="{% url 'MemeIOX:topics' %}">Topics</a>
+        </div>
+
+        <div class="view-wrapper-content">{% block content %}{% endblock content %}</div>
+
+    </div>
+
+</body>
+</html>

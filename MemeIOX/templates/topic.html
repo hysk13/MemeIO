@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="topic-intro-wrap">
+        <h3>Welcome to "{{ topic }}"</h3>
+        <p>This topic has been created on {{ topic.date_added }}</p>
+    </div>
+
+    <div class="topic-topic-wrap">
+        {% for entry in entries %}
+            <hr>
+            <div class="topic-entry-wrapper">
+                <h4>{{ entry }}</h4>
+                <img src="{{ entry.entry_file.url }}" alt="image failed to load" width="200px" height="auto">
+            </div>
+        {% empty %}
+            <hr>
+            <p class="empty-text-yet">There are no entries... YET</p>
+        {% endfor %}
+        <hr>
+    </div>
+
+    <a class="topic-create-btn" href="{% url 'MemeIOX:new_entry' topic.id %}">Create New Entry</a>
+
+{% endblock content %}

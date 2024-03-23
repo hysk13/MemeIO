@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="index-intro-wrap">
+        <h2>Welcome to MemeIO!</h2>
+        <p>Feel Free to Share Memes Here~</p>
+    </div>
+
+    <div class="index-topic-catalog">
+        <h4>Browse Our Topics</h4>
+        {% for topic in topics %}
+            <a class="index-topic-catalog-link" href="{% url 'MemeIOX:topic' topic.id %}">{{ topic }}</a>
+        {% empty %}
+            <p class="empty-text-yet">There are no topics... YET</p>
+        {% endfor %}
+    </div>
+    
+    <a class="index-create-btn" href="{% url 'MemeIOX:new_topic' %}">Create New Topic</a>
+
+{% endblock content %}

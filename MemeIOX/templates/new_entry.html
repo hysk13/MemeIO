@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="newentry-intro-wrap">
+        <h3>Add a Post to <a href="{% url 'MemeIOX:topic' topic.id %}">"{{ topic }}"</a></h3>
+        <p>Posting Made Easy...</p>
+    </div>
+
+    <div class="newentry-form-wrap">
+        <form enctype="multipart/form-data" action="{% url 'MemeIOX:new_entry' topic.id %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Add Entry</button>
+        </form>
+    </div>
+
+{% endblock content %}

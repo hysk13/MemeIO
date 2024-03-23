@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="topics-intro-wrap">
+        <h3>MemeIO's Topics</h3>
+        <p>Can't see your interests? Add One!</p>
+    </div>
+
+    <div class="topics-topics-wrap">
+        {% for topic in topics %}
+            <a class="topics-topics-wrap-link" href="{% url 'MemeIOX:topic' topic.id %}">{{ topic }}</a>
+        {% empty %}
+            <p class="empty-text-yet">There are no topics YET</p>
+        {% endfor %}
+    </div>
+
+    <a class="topics-create-btn" href="{% url 'MemeIOX:new_topic' %}">Create New Topic</a>
+
+{% endblock content %}
